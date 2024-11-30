@@ -1,1 +1,75 @@
-<h1>TakeOver By bl4nk</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:: BL4NK ::</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+        }
+        .terminal-text {
+            text-shadow: 0 0 5px #00ff41;
+        }
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center bg-black text-center p-4">
+    <div class="bg-black/70 p-8 rounded-xl border-2 border-green-600 max-w-md w-full">
+        <h1 class="text-4xl font-bold mb-4 terminal-text glitch">
+            B L 4 N K
+        </h1>
+        
+        <div class="space-y-4 text-green-400">
+            <div class="bg-black/50 p-4 rounded">
+                <h2 class="text-xl font-semibold mb-2 terminal-text">
+                    System Status
+                </h2>
+                <p class="text-sm">
+                    Connection: <span class="text-green-300">SECURED</span><br>
+                    Firewall: <span class="text-green-300">ACTIVE</span><br>
+                    Intrusion Detection: <span class="text-green-300">ONLINE</span>
+                </p>
+            </div>
+            
+            <div class="bg-black/50 p-4 rounded">
+                <h2 class="text-xl font-semibold mb-2 terminal-text">
+                    Access Terminal
+                </h2>
+                <input type="text" placeholder="Enter Access Code" 
+                    class="w-full bg-black border-2 border-green-600 text-green-400 p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+                <button class="mt-2 w-full bg-green-800 text-green-300 py-2 rounded hover:bg-green-700 transition">
+                    AUTHENTICATE
+                </button>
+            </div>
+        </div>
+        
+        <footer class="mt-4 text-xs text-green-600">
+            © 2024 BL4NK | All Rights Encrypted
+        </footer>
+    </div>
+
+    <script>
+        // Simple terminal-like effect
+        const texts = document.querySelectorAll('.terminal-text');
+        texts.forEach(text => {
+            text.addEventListener('mouseover', () => {
+                text.classList.add('glitch');
+                setTimeout(() => {
+                    text.classList.remove('glitch');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
